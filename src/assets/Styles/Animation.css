@@ -1,0 +1,115 @@
+.upDown{
+    animation: upDown 3s ease-in-out infinite;
+}
+
+/* animation around divs */
+.trt{
+    animation: slidetrt 8s infinite;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.trr{
+    animation: slidetrr 8s infinite;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.blb{
+    animation: slideblb 8s  infinite;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.bll{
+    animation: slidebll 8s infinite;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.subscriptionBell{
+    animation: shakebell 2s infinite;
+}
+.sendMessage{
+    animation: slidetofro 2s infinite;
+}
+
+@keyframes slidetofro {
+    0%{
+        transform: translateX(0px);
+    }
+    60%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+@keyframes shakebell {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    20%{
+        transform: rotateZ(0deg);
+    }
+    40%{
+        transform: rotateZ(-40deg);
+    }
+    60%{
+        transform: rotateZ(40deg);
+    }
+    80%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+
+@keyframes upDown {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: -5%;
+    }
+}
+/* animation around divs */
+@keyframes slidetrt {
+    0%{
+        right: -30%;
+    }
+    50%{
+        right: 100%;
+    }
+    100%{
+        right: -30%;
+    }
+}
+@keyframes slidetrr {
+    from{
+        top: -30%;
+    }
+    50%{
+        top: 100%;
+    }
+    to{
+        top: -30%;
+    }
+}
+@keyframes slideblb {
+    from{
+        left: -30%;
+    }
+    50%{
+        left: 100%;
+    }
+    to{
+        left: -30%;
+    }
+}
+@keyframes slidebll {
+    from{
+        bottom: -30%;
+    }
+    50%{
+        bottom: 100%;
+    }
+    to{
+        bottom: -30%;
+    }
+}
