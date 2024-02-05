@@ -11,6 +11,8 @@ import { Blog } from './Pages/Blog/Blog';
 import { Nav } from './Components/Nav';
 import { Footer } from './Components/Footer';
 import { About } from './Pages/About/About';
+import { ABlogPage } from './Pages/Blog/ABlogPage';
+import { HelmetProvider } from 'react-helmet-async';
 
 const Layout = () =>{
   const url = document.baseURI
@@ -18,11 +20,13 @@ const Layout = () =>{
 
   return(
     <div className='app'>
-      <AppContext.Provider value={{currentNav, setCurrentNav}}> 
-          <Nav currentNav={currentNav}/>  
-          <Outlet />
-          <Footer />
-        </AppContext.Provider>
+      <HelmetProvider>
+        <AppContext.Provider value={{currentNav, setCurrentNav}}> 
+            <Nav currentNav={currentNav}/>  
+            <Outlet />
+            <Footer />
+          </AppContext.Provider>
+      </HelmetProvider>
     </div>
   )
 }
@@ -43,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/Blog',
         element: <Blog /> 
+      },
+      {
+        path: '/Blog/:id',
+        element: <ABlogPage /> 
       },
       
       {

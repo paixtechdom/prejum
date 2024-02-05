@@ -6,37 +6,43 @@ const Suscribe = () => {
     const [ scale, setScale ] = useState(1)
 
     return(
-        <div className="flex justify-center items-center w-full text-gray-200 py-9 bg-blue-30">
-            <div className="flex justify-between xl:w-9/12 w-11/12 items-center transition-all duration-500 gap-3 flex-col ">
-            <div className="w-full ">
-                <h2 className="text-2xl">Suscribe to receive updates</h2>
+        <>
+            <div className="pt-9">
             </div>
-            <form className="flex justify-between w-full items-center transition-all duration-500 gap-3 md:flex-row flex-col h-full">
-               <div className="flex border w-full rounded-lg overflow-hidden">
-                    <i className="bi bi-person-fill bg-black p-2 text-white opacity-50"></i>
-                    <input type="text" placeholder="Name" className="bg-transparent p-2"/>
-               </div>
-               <div className="flex border w-full rounded-lg overflow-hidden">
-                    <i className="bi bi-envelope-fill bg-black p-2 text-white opacity-50"></i>
-                    <input type="mail" placeholder="Email" className="bg-transparent p-2"/>
-               </div>
-                <div className={`flex cursor-pointer items-center bg-gradient-to-r from-gray-900 to-pink-900 shadow-xl rounded-lg p-1 text-lg transition-all duration-500 w-full justify-center cursor-pointer`}
-                style={{
-                    transform: `scale(${scale})`
-                }}
-                onMouseOver={() =>{
-                    setScale(0.95)
-                }}
-                onMouseOut={() =>{
-                    setScale(1)
-                }}>
-
-                    <i className="bi bi-bell-fill text-gray-300 bg-gray-90 rounded-full flex items-center justify-center p-2 subscriptionBell"></i>
-                    <input type="submit" placeholder="Name" className="bg-transparent" value={'SUSCRIBE'}/>
+            <div className="flex justify-center items-center w-full text-gray-200 py-9 bg-blue-30">
+                <div className="flex justify-between md:w-9/12 w-11/12 items-center transition-all duration-500 gap-3 flex-col ">
+                <div className="w-full ">
+                    <h2 className="text-2xl">Suscribe to receive updates</h2>
                 </div>
-            </form>
+                <form className="flex justify-between w-full items-center transition-all duration-500 gap-3 md:flex-row flex-col h-full">
+                <div className="flex border w-full rounded-lg overflow-hidden">
+                        <i className="bi bi-person-fill bg-black p-2 text-white opacity-50"></i>
+                        <input type="text" placeholder="Name" className="bg-transparent p-2"/>
+                </div>
+                <div className="flex border w-full rounded-lg overflow-hidden">
+                        <i className="bi bi-envelope-fill bg-black p-2 text-white opacity-50"></i>
+                        <input type="mail" placeholder="Email" className="bg-transparent p-2"/>
+                </div>
+                    <div className={`flex cursor-pointer items-center bg-gradient-to-r from-gray-900 to-pink-900 shadow-xl rounded-lg p-1 text-lg transition-all duration-500 w-full justify-center cursor-pointer`}
+                    style={{
+                        transform: `scale(${scale})`
+                    }}
+                    onMouseOver={() =>{
+                        setScale(0.95)
+                    }}
+                    onMouseOut={() =>{
+                        setScale(1)
+                    }}>
+
+                        <i className="bi bi-bell-fill text-gray-300 bg-gray-90 rounded-full flex items-center justify-center p-2 subscriptionBell"></i>
+                        <input type="submit" placeholder="Name" className="bg-transparent" value={'SUSCRIBE'}/>
+                    </div>
+                </form>
+                </div>
             </div>
-        </div>
+            <div className="pb-9">
+            </div>
+        </>
     )
 }
 
@@ -90,7 +96,7 @@ const ContactForm = () => {
                     }}>
 
                         <input type="submit" placeholder="Name" className="bg-transparent" value={'SEND MESSAGE'}/>
-                        <i className="bi bi-chevron-right text-gray-100 bg-gray-90 rounded-full flex items-center justify-center p-2 sendMessage"></i>
+                        <i className="bi bi-chevron-right text-gray-100 bg-gray-90 rounded-full flex items-center justify-center p-2 slidetofro"></i>
                     </div>
                 </form>
                 <img src={contactImg} alt="Contact Us" className="md:w-5/12 max-h-96 md:h-full"/>

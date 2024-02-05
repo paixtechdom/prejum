@@ -7,9 +7,9 @@ export const Nav = ({currentNav}) => {
 
     return(
     <div className="flex justify-center items-center w-full py-5 bg-gradient-to-r from-gray-900 to-pink-900 fixed top-0 z-50">
-        <div className="flex justify-between xl:w-9/12 w-11/12 items-center transition-all duration-500 md:bg-none z-50">
+        <div className="flex justify-between md:w-9/12 w-11/12 items-center transition-all duration-500 md:bg-none z-50">
 
-            <div className="logo text-2xl text-gray-300">PREJUM</div>
+            <Link to='/' className="logo text-2xl text-gray-300">PREJUM</Link>
             <div className="flex gap-4">
                 <div className="md:hidden">
                     <i className={`bi bi-search text-gray-300 text-xl cursor-pointer`}></i>
@@ -26,7 +26,7 @@ export const Nav = ({currentNav}) => {
             }}>
                 {
                     NavInfo.map((nav, key) => (
-                        <Link key={key} to={`/${nav.link}`} className={`flex items-center gap-3 items-center md:gap-0 md:flex-col ${currentNav == nav.title ? 'opacity-50' : ''}`}>
+                        <Link key={key} to={`/${nav.link}`} className={`flex items-center gap-3 items-center md:gap-0 md:flex-col ${currentNav == nav.title ? 'opacity-50' : ''}`} onClick={()=> setDropDownPos( -100)}>
                             <i className={`bi bi-${nav.icon}-fill text-gray-300 text-xl md:hidden`}></i>
                             <div className='text-gray-300 text-sm'>{nav.title}</div>
                         </Link>
@@ -35,7 +35,7 @@ export const Nav = ({currentNav}) => {
                     }
                 
                     <Link to={`/`} className=" w-fit">
-                    <PrimaryButton text='Search' icon='search'/>
+                    <PrimaryButton text='Search' icon='search' clas={'search'}/>
                     </Link>
             </div>
         </div>

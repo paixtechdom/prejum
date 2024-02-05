@@ -2,6 +2,7 @@ import { SocialMediaInfo } from '../../assets/Constants'
 import me from '../../assets/Images/me2.png'
 import girl2 from '../../assets/Images/girl 2.png'
 import { PrimaryButton, SecondaryButton } from '../../Components/Button'
+import { ScrollPageDown } from '../../Functions/Functions'
 
 export const Hero = () => {
     return(
@@ -10,17 +11,17 @@ export const Hero = () => {
                 }}>
                     <img src={girl2} alt={girl2} className='opacity-50'/>
                 </div>
-            <div className="flex justify-center xl:w-9/12 w-11/12 items-center transition-all duration-500 h-full relative">
+            <div className="flex justify-center md:w-9/12 w-11/12 items-center transition-all duration-500 h-full relative">
                 <div className="flex justify-center items-center flex-col text-center gap-9 mt-9">
                     {/* <p className='text-gray-200 text-xl'>PREJUM BLOG</p> */}
-                    <h1 className="text-3xl md:text-5xl w-8/12">
+                    <h1 className="text-3xl md:text-5xl w-11/12">
                         Premium contents for teenage girls and youths
                     </h1>
-                    <p className='text-gray-300 text-sm md:text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor temporibus animi quidem delectus, hic pariatur ut in sunt sit dolore, natus atque. Sapiente, iure numquam vel exercitationem pariatur voluptatum cumque.</p>
+                    <p className='text-gray-300 text-sm md:text-lg line-25'>Website prototype for a blog sit amet consectetur adipisicing elit. Dolor temporibus animi quidem delectus, hic pariatur ut in sunt sit dolore, natus atque. Sapiente, iure numquam vel exercitationem pariatur voluptatum cumque.</p>
 
                     <div className="flex gap-3 mt-3">
-                        <PrimaryButton icon='search' text={'Search'}/>
-                        <SecondaryButton icon='bell-fill' text={'Suscribe'}/>
+                        <PrimaryButton icon='search' text={'Search'}clas={'search'}/>
+                        <SecondaryButton icon='bell-fill' text={'Suscribe'}  clas={'subscriptionBell'}/>
                     </div>
                     <div className="flex gap-6">
                         {
@@ -31,7 +32,9 @@ export const Hero = () => {
                             ))
                         }
                     </div>
-                    <div className="absolute bottom-0 mb-9 pb-9 upDown transition-all duration-500">
+                    <div className="absolute bottom-0 mb-9 pb-9 upDown transition-all duration-500" onClick={() => {
+                        ScrollPageDown(36)
+                    }}>
                         <PrimaryButton icon='arrow-down'/>
                     </div>
                 </div>
